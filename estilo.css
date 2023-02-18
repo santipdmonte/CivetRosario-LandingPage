@@ -297,7 +297,7 @@
         width: 100%;
     }
 
-    .menu-bottom-servicios{
+    .menu-nonservice{
         display:none;
     }
 
@@ -319,11 +319,6 @@
     .menu{
         gap:5px;
     }
-
-
-
-
-
 
     .contenedor{
         padding:0px 0px 50px 0px;
