@@ -36,7 +36,12 @@
         
                         <div class="menu"> 
                             <a href="#inicio" class="menu-bottom menu-bottom-inicio">Inicio</a>
-                            <a href="https://calendly.com/civetrosario" class="menu-bottom menu-bottom-servicios">Turnos Online</a>
+                            <a class="menu-bottom menu-bottom-servicios"
+                                href="" 
+                                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/civetrosario/consulta'});return false;">
+                                Turnos Online
+                            </a>
+                            <!-- <a href="https://calendly.com/civetrosario" class="menu-bottom menu-bottom-servicios">Turnos Online</a> -->
                             <a href="#contacto"class="menu-bottom">Contacto</a>
                             <a href="#encontranos" class="menu-bottom">Encontranos</a>
                         </div>   
@@ -65,7 +70,16 @@
                         <t>Ante cualquier consulta contactarse a este número </t>
                     </div>
                 </div>
-                <a target="_BLANK" href="https://calendly.com/civetrosario" class="button button1">Obtener turno online</a>
+                <!-- Principio del widget de enlace de Calendly -->
+                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                <a class="button button1" 
+                    href="" 
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/civetrosario/consulta'});return false;">
+                    Obtener turno online
+                </a>
+                <!-- Final del widget de enlace de Calendly -->
+                <!-- <a target="_BLANK" href="https://calendly.com/civetrosario" class="button button1">Obtener turno online</a> -->
 
             </section>
 
