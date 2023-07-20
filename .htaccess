@@ -1,0 +1,12 @@
+Options -MultiViews
+RewriteEngine On
+
+# Redirección de /turnos a /turnos.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# Redirección de /turnos/ a /turnos.html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/$ $1.html [L]
