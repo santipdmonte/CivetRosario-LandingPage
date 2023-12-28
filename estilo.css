@@ -33,6 +33,10 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    /* position: fixed; */
+}
+
+.fixed{
     position: fixed;
 }
 
@@ -86,6 +90,38 @@
 
 .header-wpp:hover{
     width: 64px;
+}
+
+
+.marcaAgua {
+    margin: 0;
+    padding: 0;
+    /* Ajusta la opacidad de la imagen de fondo */
+    background-image: url('Logos\Logo Civet\PNG (fondo transparente)\Reducción.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.marcaAgua::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Ajusta la opacidad del fondo transparente */
+    background-color: rgba(255, 255, 255, 0.5); /* Cambia el último valor (0.5) para ajustar la opacidad */
+    z-index: -1;
+}
+
+.contenido {
+    /* Estilos para el contenido de tu página */
+    padding: 20px;
+    color: white;
+    position: relative;
+    z-index: 1;
 }
 
 

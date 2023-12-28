@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> CIVET </title>
+        <link rel="stylesheet" type="text/css" href="estilo.css">
+        <link rel="stylesheet" type="text/css" href="normalize.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="CIVET">
+        <meta property="og:description" content="Clinica Veterinaria">
+        <meta property="og:image" content="Logos/portada.png">
+        <meta property="og:url" content="https://civetrosario.com/">
+        <link rel="icon" href="Logos/Reducción.ico">
+        <script src="https://kit.fontawesome.com/fa93399778.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Libre+Baskerville&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3BGSEJRQ8S"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3BGSEJRQ8S');
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->   
+          
+    </head>
+
+    <body >
+            
+        <header class="header">
+
+            <div class="header-barra">
+                    <div class="logo"> 
+                        <a href="# "><img src="Logos/Logo.png"></a>
+                    </div>
+    
+                    <div class="menu"> 
+                        <a href="#inicio" class="menu-bottom menu-bottom-inicio">Inicio</a>
+                        <a class="menu-bottom "
+                            href="" 
+                            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/civetrosario/consulta'});return false;">
+                            Turnos Online
+                        </a>
+                        <!-- <a href="https://calendly.com/civetrosario" class="menu-bottom">Turnos Online</a> -->
+                        <a href="#contacto"class="menu-bottom menu-nonservice">Contacto</a>
+                        <a href="#encontranos" class="menu-bottom menu-nonservice">Encontranos</a>
+                    </div>   
+            </div>
+            
+        </header>
+
+
+        <section id="encuesta">
+            <div class="d-flex justify-content-center" style="height: 100vh;">
+                <div class="text-center">
+                    <div class="mb-5 mt-3">
+                        <h1> Encuesta de satisfacción </h1>
+                        <p style="color: grey">¡Ayudanos a mejorar!</p>
+                    </div>
+        
+                    <div class="text-left">
+                        <form id="encuestaForm" onsubmit="enviarFormulario(); return false;">
+                            <div class="mb-3">
+                                <h5 class="text-left">Déjanos tu comentario...</h5>
+                                <textarea class="form-control" name="comentario" id="comentario" rows="3"></textarea>
+                            </div>
+        
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="encuestaEnviada" style="height: 100vh; display: none;">
+            <div>
+                <h2 class="mt-5">¡Gracias por tu comentario!</h2>
+                <p class="text-center" style="color: grey">¡Comentario enviado correctamente!</p>
+            </div>
+        </section>
+
+
+        <footer class="footer">
+            <div class="cont-footer">
+                <h2>CONTACTO </h2>
+                <t>E-mail: <t class="detalle">civetpedemonte@gmail.com</t> 
+                <br>
+                <t>Tel Urgenicas: <t class="detalle"> (0341) 640-2289 </t> 
+                <br>
+                <t>Tel Consultorio: <t class="detalle"> 485 1242 / 485 3116 </t> 
+                <br>
+                <br>
+                <div class="cont-footer2-social">
+                    <a target="_blank" href="https://www.facebook.com/centrointegral.veterinario  "><img class="footer-social fa" src="Logos/fbk2.png"> </a>
+                    <a target="_blank" href="https://instagram.com/civetrosario?utm_medium=copy_link"><img class="footer-social" src="Logos/igg2.png"> </a>
+                    <a target="_BLANK" href="https://wa.me/5493416402289?text=Buen%20Dia!%20Tengo%20una%20consulta!..."><img class="footer-social" src="Logos/wpp.png"> </a>
+                </div>
+            </div>
+
+            <div class="cont-footer">
+                <h2> CIVET ROSARIO</h2>
+                <t>En Civet Rosario estamos listos para atender sus consultas, urgencias o brindarle la información que necesite.</t>
+                <br>
+                <br>
+                <t><a target="_blank" href="https://goo.gl/maps/4VejARrjYKS61mv8A" class="detalle"> Pasco 1851, Rosario, Santa Fe </a> </t>
+            </div>
+        </footer>
+
+    </body>
+</html>   
+
+
+
+<script>
+    function enviarFormulario() {
+        mostrarMensaje();
+
+        // Obtener los datos del formulario
+        var comentario = document.getElementById("comentario").value;
+        console.log(comentario)
+
+        // Crear objeto de datos
+        var datos = {
+            comentario: comentario,
+            fecha: new Date().toLocaleString(),
+            // Agrega aquí más campos según sea necesario
+        };
+
+        // Convertir datos a formato JSON
+        var jsonData = JSON.stringify(datos);
+
+        // Crear objeto XMLHttpRequest
+        var xhr = new XMLHttpRequest();
+
+        // Configurar la solicitud POST al webhook
+        xhr.open("POST", "https://hook.us1.make.com/ytpmiauzy2ldyxb6a69p9i8kse73pn7j", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        // Definir la función de retorno de llamada
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Éxito: puedes realizar acciones adicionales si es necesario
+            }
+        };
+
+        // Enviar los datos al webhook
+        xhr.send(jsonData);
+    }
+
+
+    function mostrarMensaje() {
+        // Oculta el formulario
+        document.getElementById("encuesta").style.display = "none";
+        // Muestra el mensaje de agradecimiento
+        var mensajeAgradecimiento = document.getElementById("encuestaEnviada");
+        mensajeAgradecimiento.style.display = "block";
+        mensajeAgradecimiento.classList.add("d-flex", "justify-content-center");
+    }
+</script>
